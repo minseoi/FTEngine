@@ -13,6 +13,7 @@
 		6E7962AA27AED87E00658775 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962A627AED87E00658775 /* Character.cpp */; };
 		6E7962AD27AED88900658775 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962AC27AED88900658775 /* Vector2.cpp */; };
 		6E7962B027AFA00200658775 /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962AE27AFA00200658775 /* Math.cpp */; };
+		6E7962B427AFF09F00658775 /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962B227AFF09E00658775 /* Queue.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		6E7962AC27AED88900658775 /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
 		6E7962AE27AFA00200658775 /* Math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
 		6E7962AF27AFA00200658775 /* Math.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
+		6E7962B227AFF09E00658775 /* Queue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Queue.cpp; sourceTree = "<group>"; };
+		6E7962B327AFF09E00658775 /* Queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,7 @@
 		6E79629E27AED7CC00658775 /* FTEngine */ = {
 			isa = PBXGroup;
 			children = (
+				6E7962B127AFF02100658775 /* DataStructure */,
 				6E7962A627AED87E00658775 /* Character.cpp */,
 				6E7962A027AED87E00658775 /* Character.hpp */,
 				6E7962A427AED87E00658775 /* GameMaster.cpp */,
@@ -101,6 +105,15 @@
 				6E7962AF27AFA00200658775 /* Math.hpp */,
 			);
 			path = Math;
+			sourceTree = "<group>";
+		};
+		6E7962B127AFF02100658775 /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+				6E7962B227AFF09E00658775 /* Queue.cpp */,
+				6E7962B327AFF09E00658775 /* Queue.hpp */,
+			);
+			path = DataStructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7962B427AFF09F00658775 /* Queue.cpp in Sources */,
 				6E7962A827AED87E00658775 /* Object.cpp in Sources */,
 				6E7962A927AED87E00658775 /* GameMaster.cpp in Sources */,
 				6E7962AD27AED88900658775 /* Vector2.cpp in Sources */,

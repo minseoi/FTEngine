@@ -12,6 +12,7 @@ GameMaster* GameMaster::instance = nullptr;
 Object** GameMaster::worldObjects = nullptr;
 uint GameMaster::currentWorldObjectCount=0;
 uint GameMaster::maxWorldObjectsCount =0;
+Queue<int> GameMaster::objectIndexesToRecycle;
 
 GameMaster::~GameMaster()
 {
@@ -43,4 +44,17 @@ bool GameMaster::ApplyDamage(const Object& damagedObject, const Object& damageCa
         returnVal = worldObjects[damagedObject.m_worldIndex]->TakeDamage(damage, damageCauser);
     }
     return returnVal;
+}
+
+void GameMaster::DestroyObject(Object* object)
+{
+    objectIndexesToRecycle.Push(object->m_worldIndex);
+    worldObjects[object->m_worldIndex] = nullptr;
+    --currentWorldObjectCount;
+    
+    std::cout<<"GameMaster::DestroyObject -> Push to objectIndexesToRecycle: "<<object->m_worldIndex<<std::endl;
+    std::cout<<"GameMaster::DestroyObject -> "<<object->m_name<<std::endl;
+    std::cout<<"GameMaster::CreateObject -> "<<"CC/MC : "<< currentWorldObjectCount<<"/"<<maxWorldObjectsCount<< std::endl;
+    
+    delete object;
 }

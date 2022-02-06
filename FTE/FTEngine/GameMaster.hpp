@@ -9,6 +9,7 @@
 #define GameMaster_hpp
 
 #include "Object.hpp"
+#include "DataStructure/Queue.hpp"
 #include <iostream>
 #include <string>
 
@@ -23,10 +24,14 @@ private:
     static uint currentWorldObjectCount;
     static uint maxWorldObjectsCount;
     
+    static Queue<int> objectIndexesToRecycle;
+    
 public:
     static GameMaster* GetInstance();
     
     static bool ApplyDamage(const Object& damagedObject, const Object& damageCauser, int damage);
+    
+    static void DestroyObject(Object* object);
     
     template <typename T>
     static T* CreateObject(const std::string name)
