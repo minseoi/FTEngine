@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E0802DA273BFF4B00BEE174 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E0802D9273BFF4B00BEE174 /* main.cpp */; };
+		6E7962A727AED87E00658775 /* Launch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962A227AED87E00658775 /* Launch.cpp */; };
+		6E7962A827AED87E00658775 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962A327AED87E00658775 /* Object.cpp */; };
+		6E7962A927AED87E00658775 /* GameMaster.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962A427AED87E00658775 /* GameMaster.cpp */; };
+		6E7962AA27AED87E00658775 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962A627AED87E00658775 /* Character.cpp */; };
+		6E7962AD27AED88900658775 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962AC27AED88900658775 /* Vector2.cpp */; };
+		6E7962B027AFA00200658775 /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962AE27AFA00200658775 /* Math.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6E0802D6273BFF4B00BEE174 /* PraticeApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PraticeApp; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E0802D9273BFF4B00BEE174 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6E0802D6273BFF4B00BEE174 /* FTE */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FTE; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E7962A027AED87E00658775 /* Character.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Character.hpp; sourceTree = "<group>"; };
+		6E7962A127AED87E00658775 /* Object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Object.hpp; sourceTree = "<group>"; };
+		6E7962A227AED87E00658775 /* Launch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Launch.cpp; sourceTree = "<group>"; };
+		6E7962A327AED87E00658775 /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		6E7962A427AED87E00658775 /* GameMaster.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMaster.cpp; sourceTree = "<group>"; };
+		6E7962A527AED87E00658775 /* GameMaster.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameMaster.hpp; sourceTree = "<group>"; };
+		6E7962A627AED87E00658775 /* Character.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Character.cpp; sourceTree = "<group>"; };
+		6E7962AB27AED88900658775 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		6E7962AC27AED88900658775 /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
+		6E7962AE27AFA00200658775 /* Math.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Math.cpp; sourceTree = "<group>"; };
+		6E7962AF27AFA00200658775 /* Math.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Math.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +56,7 @@
 		6E0802CD273BFF4A00BEE174 = {
 			isa = PBXGroup;
 			children = (
-				6E0802D8273BFF4B00BEE174 /* PraticeApp */,
+				6E0802D8273BFF4B00BEE174 /* FTE */,
 				6E0802D7273BFF4B00BEE174 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +64,51 @@
 		6E0802D7273BFF4B00BEE174 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E0802D6273BFF4B00BEE174 /* PraticeApp */,
+				6E0802D6273BFF4B00BEE174 /* FTE */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6E0802D8273BFF4B00BEE174 /* PraticeApp */ = {
+		6E0802D8273BFF4B00BEE174 /* FTE */ = {
 			isa = PBXGroup;
 			children = (
-				6E0802D9273BFF4B00BEE174 /* main.cpp */,
+				6E79629E27AED7CC00658775 /* FTEngine */,
 			);
-			path = PraticeApp;
+			path = FTE;
+			sourceTree = "<group>";
+		};
+		6E79629E27AED7CC00658775 /* FTEngine */ = {
+			isa = PBXGroup;
+			children = (
+				6E7962A627AED87E00658775 /* Character.cpp */,
+				6E7962A027AED87E00658775 /* Character.hpp */,
+				6E7962A427AED87E00658775 /* GameMaster.cpp */,
+				6E7962A527AED87E00658775 /* GameMaster.hpp */,
+				6E7962A227AED87E00658775 /* Launch.cpp */,
+				6E7962A327AED87E00658775 /* Object.cpp */,
+				6E7962A127AED87E00658775 /* Object.hpp */,
+				6E79629F27AED7D400658775 /* Math */,
+			);
+			path = FTEngine;
+			sourceTree = "<group>";
+		};
+		6E79629F27AED7D400658775 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				6E7962AC27AED88900658775 /* Vector2.cpp */,
+				6E7962AB27AED88900658775 /* Vector2.h */,
+				6E7962AE27AFA00200658775 /* Math.cpp */,
+				6E7962AF27AFA00200658775 /* Math.hpp */,
+			);
+			path = Math;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E0802D5273BFF4A00BEE174 /* PraticeApp */ = {
+		6E0802D5273BFF4A00BEE174 /* FTE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E0802DD273BFF4B00BEE174 /* Build configuration list for PBXNativeTarget "PraticeApp" */;
+			buildConfigurationList = 6E0802DD273BFF4B00BEE174 /* Build configuration list for PBXNativeTarget "FTE" */;
 			buildPhases = (
 				6E0802D2273BFF4A00BEE174 /* Sources */,
 				6E0802D3273BFF4A00BEE174 /* Frameworks */,
@@ -77,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = PraticeApp;
+			name = FTE;
 			productName = PraticeApp;
-			productReference = 6E0802D6273BFF4B00BEE174 /* PraticeApp */;
+			productReference = 6E0802D6273BFF4B00BEE174 /* FTE */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +137,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6E0802D1273BFF4A00BEE174 /* Build configuration list for PBXProject "PraticeApp" */;
+			buildConfigurationList = 6E0802D1273BFF4A00BEE174 /* Build configuration list for PBXProject "FTE" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,7 +150,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E0802D5273BFF4A00BEE174 /* PraticeApp */,
+				6E0802D5273BFF4A00BEE174 /* FTE */,
 			);
 		};
 /* End PBXProject section */
@@ -119,7 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E0802DA273BFF4B00BEE174 /* main.cpp in Sources */,
+				6E7962A827AED87E00658775 /* Object.cpp in Sources */,
+				6E7962A927AED87E00658775 /* GameMaster.cpp in Sources */,
+				6E7962AD27AED88900658775 /* Vector2.cpp in Sources */,
+				6E7962B027AFA00200658775 /* Math.cpp in Sources */,
+				6E7962A727AED87E00658775 /* Launch.cpp in Sources */,
+				6E7962AA27AED87E00658775 /* Character.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +302,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E0802D1273BFF4A00BEE174 /* Build configuration list for PBXProject "PraticeApp" */ = {
+		6E0802D1273BFF4A00BEE174 /* Build configuration list for PBXProject "FTE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E0802DB273BFF4B00BEE174 /* Debug */,
@@ -265,7 +311,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E0802DD273BFF4B00BEE174 /* Build configuration list for PBXNativeTarget "PraticeApp" */ = {
+		6E0802DD273BFF4B00BEE174 /* Build configuration list for PBXNativeTarget "FTE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E0802DE273BFF4B00BEE174 /* Debug */,
