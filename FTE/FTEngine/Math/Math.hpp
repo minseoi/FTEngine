@@ -11,7 +11,6 @@
 class Math
 {
 public:
-    static int IntigerClamp(int& value, int min, int max);
     static int IntigerClamp(int value, int min, int max);
 };
 

@@ -7,16 +7,6 @@
 
 #include "Math.hpp"
 
-int Math::IntigerClamp(int& num, int min, int max)
-{
-    if(num < min)
-        num = min;
-    else if(num > max)
-        num = max;
-    
-    return num;
-}
-
 int Math::IntigerClamp(int num, int min, int max)
 {
     if(num < min)
