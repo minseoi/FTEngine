@@ -48,13 +48,15 @@ bool GameMaster::ApplyDamage(const Object& damagedObject, const Object& damageCa
 
 void GameMaster::DestroyObject(Object* object)
 {
+    object->OnDestroy();
+    
     objectIndexesToRecycle.Push(object->m_worldIndex);
     worldObjects[object->m_worldIndex] = nullptr;
     --currentWorldObjectCount;
     
-    std::cout<<"GameMaster::DestroyObject -> Push to objectIndexesToRecycle: "<<object->m_worldIndex<<std::endl;
     std::cout<<"GameMaster::DestroyObject -> "<<object->m_name<<std::endl;
-    std::cout<<"GameMaster::CreateObject -> "<<"CC/MC : "<< currentWorldObjectCount<<"/"<<maxWorldObjectsCount<< std::endl;
+    std::cout<<"GameMaster::DestroyObject -> Push to objectIndexesToRecycle: "<<object->m_worldIndex<<std::endl;
+    std::cout<<"GameMaster::DestroyObject -> "<<"CC/MC : "<< currentWorldObjectCount<<"/"<<maxWorldObjectsCount<< std::endl;
     
     delete object;
 }

@@ -6,6 +6,7 @@
 //
 
 #include "Object.hpp"
+#include "GameMaster.hpp"
 
 Object::Object()
 {}
@@ -16,14 +17,18 @@ void Object::InitializeObject(const std::string name, uint worldIndex)
     m_worldIndex = worldIndex;
 }
 
+void Object::OnDestroy()
+{
+    std::cout<<this->m_name<<"::Object OnDestroy"<<std::endl;
+}
+
 int Object::TakeDamage(int damage, const Object& damageCauser)
 {
     std::cout<<m_name<<" Object Take '"<< damage <<"'Damage From "<< damageCauser.m_name<<std::endl;
     return damage;
 }
 
-void Object::OnDeath()
+void Object::Destroy()
 {
-    std::cout<<this->m_name<<" Object Die"<<std::endl;
-    //죽은 뒤 Object 삭제 로직
+    GameMaster::DestroyObject(this);
 }

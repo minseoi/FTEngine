@@ -30,9 +30,13 @@ private:
     uint m_worldIndex;
     std::string m_name;
     
+    virtual void OnDestroy();
+    
 protected:
     virtual int TakeDamage(int damage, const Object& damageCauser);
-    virtual void OnDeath();
+    
+public:
+    void Destroy();
 };
 
 #endif /* Object_hpp */

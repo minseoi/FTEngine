@@ -27,7 +27,7 @@ int Character::TakeDamage(int damage, const Object &damageCauser)
     
     if(m_health <= 0)
     {
-        OnDeath();
+        //OnDeath();
     }
     
     return finalDamage;

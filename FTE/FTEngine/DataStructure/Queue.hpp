@@ -63,6 +63,8 @@ public:
         
         return true;
     }
+    
+    int Num() {return queueSize;}
 };
 
 #endif /* Queue_hpp */

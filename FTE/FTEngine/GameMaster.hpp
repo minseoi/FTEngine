@@ -45,7 +45,7 @@ public:
         Object* spawnedObject = static_cast<Object*>(newObject);
         if(spawnedObject == nullptr) return nullptr;
         
-        
+        int indexForSpawn = -1;
         if(currentWorldObjectCount+1 > maxWorldObjectsCount)
         {
             ++maxWorldObjectsCount;
@@ -59,12 +59,22 @@ public:
                 delete[] worldObjects;
             }
             worldObjects = tempObjects;
+            
+            indexForSpawn = currentWorldObjectCount;
         }
-        worldObjects[currentWorldObjectCount] = spawnedObject;
-        spawnedObject->InitializeObject(name, currentWorldObjectCount);
+        else
+        {
+            if(objectIndexesToRecycle.Num() > 0)
+            {
+                objectIndexesToRecycle.Pop(indexForSpawn);
+            }
+        }
+        
+        worldObjects[indexForSpawn] = spawnedObject;
+        spawnedObject->InitializeObject(name, indexForSpawn);
         ++currentWorldObjectCount;
         
-        std::cout<<"GameMaster::CreateObject -> "<<"CC/MC : "<< currentWorldObjectCount<<"/"<<maxWorldObjectsCount<< std::endl;
+        std::cout<<"GameMaster::CreateObject -> "<<"CC/MC: "<< currentWorldObjectCount<<"/"<<maxWorldObjectsCount<<" | indexForSpawn: "<<indexForSpawn<< std::endl;
         
         return (T*)spawnedObject;
     }
