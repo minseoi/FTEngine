@@ -9,32 +9,19 @@
 #define Character_hpp
 
 #include "Object.hpp"
-
-struct Stats
-{
-    int health;
-    int attack;
-    int defence;
-};
+#include "Component/CharacterStateComponent.hpp"
 
 class Character:public Object
 {
     DECLARE_FTE_OBJECT(Character, Object)
     
-private:    
-    int m_health;
-    int m_attack;
-    int m_defence;
-
-//protected:
 public:
+    CharacterStateComponent* characterStateComp;
+    
+    virtual void OnCreate() override;
+    virtual void OnDestroy() override;
+    
     virtual int TakeDamage(int damage, const Object& damageCauser) override;
-    
-public:
-    void InitializeState(const Stats stats);
-    
-    int GetAttackValue();
-    int GetDefenceValue();
 };
 
 #endif /* Character_hpp */

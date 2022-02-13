@@ -8,36 +8,34 @@
 #include "Character.hpp"
 #include "Math/Math.hpp"
 
+void Character::OnCreate()
+{
+    Super::OnCreate();
+    
+    characterStateComp = new CharacterStateComponent();
+}
+
+void Character::OnDestroy()
+{
+    delete characterStateComp;
+}
+
 int Character::TakeDamage(int damage, const Object &damageCauser)
 {
-    int finalDamage = Super ::TakeDamage(damage, damageCauser);
+    int finalDamage = Super::TakeDamage(damage, damageCauser);
     
-    finalDamage -= this->m_defence;
-    
-    if(finalDamage <= 0) return 0;
-    m_health = Math::IntigerClamp(m_health - finalDamage, 0, 100);
-    
-    if(m_health <= 0)
+    if(characterStateComp != nullptr)
     {
-        //OnDeath();
+        finalDamage -= characterStateComp->GetDefenceValue();
+        
+        if(finalDamage <= 0) return 0;
+        characterStateComp->AddHealth(-finalDamage);
+        
+        if(characterStateComp->IsDead())
+        {
+            Destroy();
+        }
     }
     
     return finalDamage;
-}
-
-void Character::InitializeState(const Stats stats)
-{
-    m_health = stats.health;
-    m_attack = stats.attack;
-    m_defence = stats.defence;
-}
-
-int Character::GetAttackValue()
-{
-    return m_attack;
-}
-
-int Character::GetDefenceValue()
-{
-    return m_defence;
 }

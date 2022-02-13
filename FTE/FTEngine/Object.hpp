@@ -31,15 +31,16 @@ protected:
 private:
     uint m_worldIndex;
     std::string m_name;
-    
-    virtual void OnCreate();
-    virtual void OnDestroy();
+    bool pendingKill;
     
 protected:
+    virtual void OnCreate();
+    virtual void OnDestroy();
     virtual int TakeDamage(int damage, const Object& damageCauser);
     
 public:
     void Destroy();
+    bool IsPendingKill();
 };
 
 #endif /* Object_hpp */

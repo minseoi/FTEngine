@@ -13,6 +13,7 @@ void Object::InitializeObject(const std::string name, uint worldIndex)
 {
     m_name = name;
     m_worldIndex = worldIndex;
+    pendingKill = false;
 }
 
 void Object::OnCreate()
@@ -34,4 +35,9 @@ int Object::TakeDamage(int damage, const Object& damageCauser)
 void Object::Destroy()
 {
     GameMaster::DestroyObject(this);
+}
+
+bool Object::IsPendingKill()
+{
+    return pendingKill;
 }
