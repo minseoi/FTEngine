@@ -8,13 +8,16 @@
 #include "Object.hpp"
 #include "GameMaster.hpp"
 
-Object::Object()
-{}
 
 void Object::InitializeObject(const std::string name, uint worldIndex)
 {
     m_name = name;
     m_worldIndex = worldIndex;
+}
+
+void Object::OnCreate()
+{
+    std::cout<<this->m_name<<"::Object OnCreate"<<std::endl;
 }
 
 void Object::OnDestroy()

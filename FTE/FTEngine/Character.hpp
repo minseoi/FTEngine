@@ -19,7 +19,7 @@ struct Stats
 
 class Character:public Object
 {
-    DECLARE_FTE_OBJECT(Character)
+    DECLARE_FTE_OBJECT(Character, Object)
     
 private:    
     int m_health;

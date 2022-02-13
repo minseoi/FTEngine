@@ -8,17 +8,9 @@
 #include "Character.hpp"
 #include "Math/Math.hpp"
 
-Character::Character()
-{}
-
-void Character::InitializeObject(const std::string name, uint worldIndex)
-{
-    Object::InitializeObject(name, worldIndex);
-}
-
 int Character::TakeDamage(int damage, const Object &damageCauser)
 {
-    int finalDamage = Object ::TakeDamage(damage, damageCauser);
+    int finalDamage = Super ::TakeDamage(damage, damageCauser);
     
     finalDamage -= this->m_defence;
     

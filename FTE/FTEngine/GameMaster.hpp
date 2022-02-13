@@ -76,6 +76,7 @@ public:
         
         std::cout<<"GameMaster::CreateObject -> "<<"CC/MC: "<< currentWorldObjectCount<<"/"<<maxWorldObjectsCount<<" | indexForSpawn: "<<indexForSpawn<< std::endl;
         
+        spawnedObject->OnCreate();
         return (T*)spawnedObject;
     }
 };

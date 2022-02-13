@@ -13,23 +13,26 @@
 
 class GameMaster;
 
-#define DECLARE_FTE_OBJECT(objectName) \
+#define DECLARE_FTE_OBJECT(thisClass, parentClass) \
     friend GameMaster; \
+    typedef parentClass Super;\
 protected: \
-    objectName(); \
-    virtual void InitializeObject(const std::string name, uint worldIndex) override;
+    thisClass(){} \
 
 class Object
 {
     friend GameMaster;
+private:
+    void InitializeObject(const std::string name, uint worldIndex);
+
 protected:
-    Object();
-    virtual void InitializeObject(const std::string name, uint worldIndex);
+    Object(){}
     
 private:
     uint m_worldIndex;
     std::string m_name;
     
+    virtual void OnCreate();
     virtual void OnDestroy();
     
 protected:
