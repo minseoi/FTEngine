@@ -10,14 +10,10 @@
 
 #include <iostream>
 #include <string>
+#include "Engine/FTEDefine.h"
+#include "Math/Vector2.h"
 
 class GameMaster;
-
-#define DECLARE_FTE_OBJECT(thisClass, parentClass) \
-    friend GameMaster; \
-    typedef parentClass Super;\
-protected: \
-    thisClass(){} \
 
 class Object
 {
@@ -32,6 +28,7 @@ private:
     uint m_worldIndex;
     std::string m_name;
     bool pendingKill;
+    vector2 location;
     
 protected:
     virtual void OnCreate();
@@ -41,6 +38,8 @@ protected:
 public:
     void Destroy();
     bool IsPendingKill();
+    vector2 GetObjectLocation()const;
+    void SetObjectLocation(const vector2& location);
 };
 
 #endif /* Object_hpp */

@@ -23,35 +23,42 @@ void vector2::Normalize()
     this->y /= length;
 }
 
-Vector2 vector2::zero()
+vector2 vector2::zero()
 {
-    return Vector2(0,0);
+    return vector2(0,0);
 }
 
-Vector2 vector2::one()
+vector2 vector2::one()
 {
-    return Vector2(1,1);
+    return vector2(1,1);
 }
 
 vector2 vector2::forward()
 {
-    return Vector2(1,0);
+    return vector2(1,0);
 }
 
 vector2 vector2::right()
 {
-    return Vector2(0,1);
+    return vector2(0,1);
 }
 
-Vector2 vector2::operator-(vector2 &v2)
+vector2 vector2::operator-(const vector2 &v2)
 {
     float rx = x - v2.x;
     float ry = y - v2.y;
     return vector2(rx,ry);
 }
 
+vector2 vector2::operator+(const vector2 &v2)
+{
+    float rx = x + v2.x;
+    float ry = y + v2.y;
+    return vector2(rx,ry);
+}
+
 std::string vector2::ToString()
 {
-    std::string str = "Vector2(" + std::to_string(x) + ", {" + std::to_string(y) + "})";
+    std::string str = "vector2(" + std::to_string(x) + ", {" + std::to_string(y) + "})";
     return str;
 }

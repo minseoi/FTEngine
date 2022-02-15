@@ -14,6 +14,7 @@ void Object::InitializeObject(const std::string name, uint worldIndex)
     m_name = name;
     m_worldIndex = worldIndex;
     pendingKill = false;
+    location = vector2::zero();
 }
 
 void Object::OnCreate()
@@ -40,4 +41,14 @@ void Object::Destroy()
 bool Object::IsPendingKill()
 {
     return pendingKill;
+}
+
+vector2 Object::GetObjectLocation() const
+{
+    return location;
+}
+
+void Object::SetObjectLocation(const vector2& location)
+{
+    this->location = location;
 }

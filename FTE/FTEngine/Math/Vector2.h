@@ -6,7 +6,7 @@
 #include <cmath>
 #include <string>
 
-typedef struct vector2
+struct vector2
 {
     float x, y;
     
@@ -24,7 +24,8 @@ typedef struct vector2
     
     std::string ToString();
     /*operator*/
-    vector2 operator - (vector2 &v2);
-}Vector2;
+    vector2 operator - (const vector2 &v2);
+    vector2 operator + (const vector2 &v2);
+};
 
 #endif /* Vector2_h */

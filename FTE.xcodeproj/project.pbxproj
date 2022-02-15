@@ -46,6 +46,7 @@
 		6E7962B327AFF09E00658775 /* Queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
 		6E7962B527B9178800658775 /* CharacterStateComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateComponent.cpp; sourceTree = "<group>"; };
 		6E7962B627B9178800658775 /* CharacterStateComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateComponent.hpp; sourceTree = "<group>"; };
+		6E7962BA27BC04DD00658775 /* FTEDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTEDefine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +87,7 @@
 		6E79629E27AED7CC00658775 /* FTEngine */ = {
 			isa = PBXGroup;
 			children = (
+				6E7962B927BC04AB00658775 /* Engine */,
 				6E7962B827B9179100658775 /* Component */,
 				6E7962B127AFF02100658775 /* DataStructure */,
 				6E7962A627AED87E00658775 /* Character.cpp */,
@@ -127,6 +129,14 @@
 				6E7962B627B9178800658775 /* CharacterStateComponent.hpp */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		6E7962B927BC04AB00658775 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				6E7962BA27BC04DD00658775 /* FTEDefine.h */,
+			);
+			path = Engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
