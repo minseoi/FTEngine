@@ -1,5 +1,6 @@
 #include "GameMaster.hpp"
 #include "Character.hpp"
+#include "GameStorage.hpp"
 
 int main()
 {
@@ -33,12 +34,19 @@ int main()
     hero->characterStateComp->InitializeState(mobStats);
 
     GameMaster::ApplyDamage(*mob, *hero, 100);
+    GameStorage::SetAccumDamage(100);
+    GameStorage::SetScore(30);
+    
     GameMaster::ApplyDamage(*hero, *mob, 2);
 
     GameMaster::DestroyObject(mob);
-
+    
     Object* tempObj = GameMaster::CreateObject<Object>("TempObj");
     tempObj->Destroy();
 
     GameMaster::DestroyObject(hero);
+    
+    std::cout<<"▼~~~ GameStorage ~~~▼"<<std::endl;
+    std::cout<<GameStorage::GetScore()<<std::endl;
+    std::cout<<GameStorage::GetMagicNumber()<<std::endl;
 }

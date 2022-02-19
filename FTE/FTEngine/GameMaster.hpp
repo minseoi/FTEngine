@@ -39,11 +39,16 @@ public:
         //if(!GetInstance()) return nullptr;
         
         auto newObject = new T();
-        std::cout<<"GameMaster::CreateObejct -> New Object: "<<name<<"("<<typeid(newObject).name()<<")"<<std::endl;
         
         //T가 Object의 자식클래스임을 확인하고, 스폰을 확정
         Object* spawnedObject = static_cast<Object*>(newObject);
-        if(spawnedObject == nullptr) return nullptr;
+        if(spawnedObject == nullptr)
+        {
+            delete newObject;
+            return nullptr;
+        }
+
+        std::cout<<"GameMaster::CreateObejct -> New Object: "<<name<<"("<<typeid(newObject).name()<<")"<<std::endl;
         
         int indexForSpawn = -1;
         if(currentWorldObjectCount+1 > maxWorldObjectsCount)

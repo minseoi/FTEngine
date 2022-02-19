@@ -15,6 +15,7 @@
 		6E7962B027AFA00200658775 /* Math.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962AE27AFA00200658775 /* Math.cpp */; };
 		6E7962B427AFF09F00658775 /* Queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962B227AFF09E00658775 /* Queue.cpp */; };
 		6E7962B727B9178800658775 /* CharacterStateComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962B527B9178800658775 /* CharacterStateComponent.cpp */; };
+		6E7962BE27C086DE00658775 /* GameStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E7962BC27C086DE00658775 /* GameStorage.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,7 +47,10 @@
 		6E7962B327AFF09E00658775 /* Queue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Queue.hpp; sourceTree = "<group>"; };
 		6E7962B527B9178800658775 /* CharacterStateComponent.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CharacterStateComponent.cpp; sourceTree = "<group>"; };
 		6E7962B627B9178800658775 /* CharacterStateComponent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CharacterStateComponent.hpp; sourceTree = "<group>"; };
-		6E7962BA27BC04DD00658775 /* FTEDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTEDefine.h; sourceTree = "<group>"; };
+		6E7962BA27BC04DD00658775 /* ObjectBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectBase.h; sourceTree = "<group>"; };
+		6E7962BC27C086DE00658775 /* GameStorage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameStorage.cpp; sourceTree = "<group>"; };
+		6E7962BD27C086DE00658775 /* GameStorage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameStorage.hpp; sourceTree = "<group>"; };
+		6E7962BF27C0B1D600658775 /* GameStorageBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameStorageBase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				6E7962A327AED87E00658775 /* Object.cpp */,
 				6E7962A127AED87E00658775 /* Object.hpp */,
 				6E79629F27AED7D400658775 /* Math */,
+				6E7962BC27C086DE00658775 /* GameStorage.cpp */,
+				6E7962BD27C086DE00658775 /* GameStorage.hpp */,
 			);
 			path = FTEngine;
 			sourceTree = "<group>";
@@ -134,7 +140,8 @@
 		6E7962B927BC04AB00658775 /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				6E7962BA27BC04DD00658775 /* FTEDefine.h */,
+				6E7962BA27BC04DD00658775 /* ObjectBase.h */,
+				6E7962BF27C0B1D600658775 /* GameStorageBase.h */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -202,6 +209,7 @@
 				6E7962AD27AED88900658775 /* Vector2.cpp in Sources */,
 				6E7962B027AFA00200658775 /* Math.cpp in Sources */,
 				6E7962B727B9178800658775 /* CharacterStateComponent.cpp in Sources */,
+				6E7962BE27C086DE00658775 /* GameStorage.cpp in Sources */,
 				6E7962A727AED87E00658775 /* Launch.cpp in Sources */,
 				6E7962AA27AED87E00658775 /* Character.cpp in Sources */,
 			);

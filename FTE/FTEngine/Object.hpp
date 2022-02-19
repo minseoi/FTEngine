@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <string>
-#include "Engine/FTEDefine.h"
+#include "Engine/ObjectBase.h"
 #include "Math/Vector2.h"
 
 class GameMaster;
